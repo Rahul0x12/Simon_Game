@@ -14,16 +14,89 @@ body {
   display: block;
   width: 50%;
   margin: auto;
-
 }
 
-.btn {
-  margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+.btn-container{
+  margin: 30px;
+  height: 12rem;
+  position: relative;
+  width: 12rem;
+  display: inline-block;  
+}
+
+.btn-frame{
+  border-radius: 10%;
+  margin: 20px;
+  background-color: rgb(229, 221, 109);
+  position: absolute;
+  height: 8rem;
+  width: 9rem;
+  border: solid 4px black;
+}
+
+.frame-low{
+  margin-top: 30px;
+  background-color: rgb(190, 183, 90);
+}
+
+.btn-click{
+  border-radius: 10%;
+  top: 8px;
+  left: 37px;
+  position: absolute;
+  height: 7rem;
+  width: 7rem;
+  border: solid 4px black;
+}
+
+.btn-low{
+  border-radius: 10%;
+  top: 19px;
+}
+
+
+.red {
+  background-color: red;
+}
+#btn-low-red{
+  background-color: rgb(181, 3, 3);
+}
+.red-pressed{
+  background-color: rgb(255, 54, 54);
+  box-shadow: 0 0 50px 20px rgb(255, 100, 100);
+}
+
+.green {
+  background-color: green;
+}
+#btn-low-green{
+  background-color: rgb(1, 94, 1);
+}
+.green-pressed{
+  background-color: rgb(0, 255, 0);
+  box-shadow: 0 0 50px 20px rgb(80, 255, 80);
+}
+
+.blue {
+  background-color: blue;
+}
+#btn-low-blue{
+  background-color: rgb(3, 3, 180);
+}
+.blue-pressed{
+  background-color: rgb(75, 75, 255);
+  box-shadow: 0 0 50px 20px rgb(88, 88, 255);
+}
+
+.yellow {
+  background-color: yellow;
+}
+#btn-low-yellow{
+  background-color: rgb(202, 202, 0);
+}
+.yellow-pressed{
+  background-color: rgb(255, 255, 88);
+  box-shadow: 0 0 50px 20px rgb(255, 255, 95);
 }
 
 .game-over {
@@ -31,24 +104,7 @@ body {
   opacity: 0.8;
 }
 
-.red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
-}
-
-.yellow {
-  background-color: yellow;
-}
-
 .pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
+  top: 19px;
 }
 

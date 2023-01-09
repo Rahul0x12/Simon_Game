@@ -1,6 +1,7 @@
 var gameColor  = ["green","red","yellow","blue"];
 var colorPattern = [];
 var gamePattern = [];
+var press;
 
 $(document).on("keypress",randomColorGenerator);
 
@@ -21,11 +22,12 @@ function randomColorGenerator(){
 
 $(".btn").on("click",function(event){
     var color = event.target.id;
+    press = color+"-pressed pressed"; 
     gamePattern.push(color);
-    $("#"+color).addClass("pressed");
+    $("#"+color).addClass(press);
     colorSound(color);
     setTimeout(function(){
-        $("#"+color).removeClass("pressed");
+        $("#"+color).removeClass(press);
     },100);
     
     checkAnswer(gamePattern.length-1)
