@@ -1,27 +1,46 @@
 var gameColor  = ["green","red","yellow","blue"];
 var colorPattern = [];
 var gamePattern = [];
+var color;
 var press;
 
-$(document).on("keypress",randomColorGenerator);
+$(".pop-up").on("click",() =>{
+    $(".pop-up").css("display","none");
+    randomColorGenerator();
+});
 
 function randomColorGenerator(){
-    $(document).off("keypress");
     gamePattern = [];
     var randomNumber = Math.floor(Math.random()*4);
+    // color = gameColor[randomNumber];
     colorPattern.push(gameColor[randomNumber]);
     $("h1").text("Level "+colorPattern.length);
-    setTimeout(() =>{
-        $("."+gameColor[randomNumber]).fadeIn(100).fadeOut(100).fadeIn(100);
-        colorSound(gameColor[randomNumber]);
+
+    colorIndicator(gameColor[randomNumber]);
+
+    // setTimeout(()=>{
+    //     $("."+gameColor[randomNumber]).addClass(gameColor[randomNumber]+"-pressed");
+    //     colorSound(gameColor[randomNumber]);
+    //     setTimeout(() =>{
+    //         $("."+gameColor[randomNumber]).removeClass(`${gameColor[randomNumber]}-pressed`);
+    //     },200);
+    // },500);
+}
+
+function colorIndicator(colorValue){
+    setTimeout(()=>{
+        $("."+colorValue).addClass(colorValue+"-pressed");
+        colorSound(colorValue);
+        setTimeout(() =>{
+            $("."+colorValue).removeClass(`${colorValue}-pressed`);
+        },200);
     },500);
-    
-    // console.log(colorPattern," - random"); 
 }
 
 
+
 $(".btn").on("click",function(event){
-    var color = event.target.id;
+    color = event.target.id;
     press = color+"-pressed pressed"; 
     gamePattern.push(color);
     $("#"+color).addClass(press);
@@ -40,7 +59,9 @@ function checkAnswer(answer) {
             randomColorGenerator();
         }
     }else {
-        $("h1").text("Game Over, Press Any Key to Retart");
+        $(".pop-up").css("display","block");
+        $("p").text("Your Memory Level is "+(colorPattern.length - 1));
+        $("h2").text("Retry");
         colorSound("wrong");
         $("body").addClass("game-over");
         setTimeout(() => {
@@ -48,7 +69,6 @@ function checkAnswer(answer) {
         },100);
         gamePattern = [];
         colorPattern = [];
-        $(document).on("keypress",randomColorGenerator);
     }
 }
 

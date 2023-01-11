@@ -1,6 +1,7 @@
 body {
   text-align: center;
   background-color: #011F3F;
+  margin: 0;
 }
 
 #level-title {
@@ -9,6 +10,39 @@ body {
   margin:  5%;
   color: #FEF2BF;
 }
+
+.pop-up{
+  display: block;
+  position: absolute;
+  margin-left: 24%;
+  border-radius: 20px;
+  border: solid 5px black;
+  width: 50%;
+  height: 27rem;
+  background-color: aqua;
+  top: 30%;
+  /* transform: translateX(50%); */
+}
+
+@media (max-width: 900px){
+  .pop-up{
+    border-radius: 0;
+    border: none;
+    margin: 0;
+    width: 100%;
+  }
+}
+
+
+p{
+  font-size: 3rem;
+  margin-top: 4rem
+}
+h2{
+  margin-top: 5rem;
+  font-size: 4rem;
+}
+
 
 .container {
   display: block;
@@ -107,4 +141,5 @@ body {
 .pressed {
   top: 19px;
 }
+
 
